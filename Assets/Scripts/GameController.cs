@@ -46,6 +46,12 @@ public class GameController : MonoBehaviour
 
     public void gameOver()
     {
+        StartCoroutine("gameover");
+    }
+
+    IEnumerator gameover()
+    {
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("gameover");
     }
 }
