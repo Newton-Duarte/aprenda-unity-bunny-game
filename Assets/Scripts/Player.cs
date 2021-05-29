@@ -201,7 +201,7 @@ public class Player : MonoBehaviour
                 break;
             case "obstacle":
                 fxSource.PlayOneShot(fxHit);
-                Destroy(gameObject, 0.1f);
+                playerAnim.SetTrigger("hit");
                 _gameController.gameOver();
                 break;
         }
