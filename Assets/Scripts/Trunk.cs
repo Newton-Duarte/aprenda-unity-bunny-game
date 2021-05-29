@@ -9,33 +9,34 @@ public class Trunk : MonoBehaviour
     public Transform startPos;
     public Transform endPos;
     public float moveSpeed;
+    public bool isMove;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("moveObject");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        if (isMove)
+        {
+            objectToMove.position = Vector3.Lerp(startPos.position, endPos.position, moveSpeed * Time.deltaTime);
 
-    private void LateUpdate()
-    {
-        //if (objectToMove.transform.position.y >= endPos.position.y)
-        //{
-        //    objectToMove.position = startPos.position;
-        //}
+            if (objectToMove.position.y >= endPos.position.y)
+            {
+                isMove = !isMove;
+                StartCoroutine("moveObject");
+            }
+        }
     }
 
     IEnumerator moveObject()
     {
-        yield return new WaitForSeconds(1f);
-        objectToMove.position = Vector3.Lerp(startPos.position, endPos.position, moveSpeed * Time.deltaTime);
-        yield return new WaitForSeconds(2f);
-        objectToMove.position = startPos.position;
-        StartCoroutine("moveObject");
+        yield return new WaitForSeconds(3f);
+        isMove = !isMove;
+        //objectToMove.position = startPos.position;
+        //yield return new WaitForSeconds(0.5f);
+        //isMove = !isMove;
     }
 }

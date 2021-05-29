@@ -1129,6 +1129,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: trunkA
       objectReference: {fileID: 0}
+    - target: {fileID: 1252244410305855977, guid: 9c6a00cda83531047a2c2d3cad6eb8a2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252244410305855977, guid: 9c6a00cda83531047a2c2d3cad6eb8a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240721282461470369, guid: 9c6a00cda83531047a2c2d3cad6eb8a2, type: 3}
+      propertyPath: endPosX
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240721282461470369, guid: 9c6a00cda83531047a2c2d3cad6eb8a2, type: 3}
+      propertyPath: endPosY
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240721282461470369, guid: 9c6a00cda83531047a2c2d3cad6eb8a2, type: 3}
+      propertyPath: startPosX
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240721282461470369, guid: 9c6a00cda83531047a2c2d3cad6eb8a2, type: 3}
+      propertyPath: startPosY
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6440159668300964788, guid: 9c6a00cda83531047a2c2d3cad6eb8a2, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -1172,6 +1196,14 @@ PrefabInstance:
     - target: {fileID: 6440159668300964788, guid: 9c6a00cda83531047a2c2d3cad6eb8a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019357351648047522, guid: 9c6a00cda83531047a2c2d3cad6eb8a2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4520229
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019357351648047522, guid: 9c6a00cda83531047a2c2d3cad6eb8a2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2554
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c6a00cda83531047a2c2d3cad6eb8a2, type: 3}
