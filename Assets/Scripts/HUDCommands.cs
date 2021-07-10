@@ -1,18 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class HUDCommands : MonoBehaviour
 {
+    TransitionController _transitionController;
+    OptionsController _optionsController;
+
+    private void Start()
+    {
+        _transitionController = FindObjectOfType(typeof(TransitionController)) as TransitionController;
+        _optionsController = FindObjectOfType(typeof(OptionsController)) as OptionsController;
+    }
     public void startGame()
     {
-        SceneManager.LoadScene(1);
+        _optionsController.StartCoroutine(_optionsController.changeMusic(_optionsController.startClip));
+        _transitionController.startFade(2);
     }
 
     public void titleScreen()
     {
-        SceneManager.LoadScene(0);
+        _optionsController.StartCoroutine(_optionsController.changeMusic(_optionsController.titleClip));
+        _transitionController.startFade(1);
     }
 
     public void quitGame()
