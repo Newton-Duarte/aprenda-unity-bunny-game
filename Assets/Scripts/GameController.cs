@@ -5,15 +5,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+public enum gameState
+{
+    gameplay, gameover
+}
+
 public class GameController : MonoBehaviour
 {
+    TransitionController _transitionController;
+    OptionsController _optionsController;
 
     //public int ammo;
     //public int weaponAmmo;
-
     //public Text ammoText;
     public Text carrotText;
     private int carrots = 0;
+
+    [Header("Gameplay Config.")]
+    public gameState currentState;
 
     [Header("Ground Config.")]
     public GameObject[] groundPrefab;
@@ -24,13 +33,9 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _transitionController = FindObjectOfType(typeof(TransitionController)) as TransitionController;
+        _optionsController = FindObjectOfType(typeof(OptionsController)) as OptionsController;
         updateCarrotText();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void setCarrot(int quantity)
@@ -46,12 +51,14 @@ public class GameController : MonoBehaviour
 
     public void gameOver()
     {
+        currentState = gameState.gameover;
         StartCoroutine("gameover");
     }
 
     IEnumerator gameover()
     {
+        _optionsController.StartCoroutine(_optionsController.changeMusic(_optionsController.gameoverClip));
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("gameover");
+        _transitionController.startFade(4);
     }
 }
