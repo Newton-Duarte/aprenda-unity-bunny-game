@@ -41,4 +41,12 @@ public class Ground : MonoBehaviour
             temp.transform.position = new Vector3(transform.position.x + _gameController.groundSize, transform.position.y, 0);
         }
     }
+
+    private void LateUpdate()
+    {
+        if (_gameController.currentState == gameState.gameover && rb.velocity != new Vector2(0, 0))
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
+    }
 }
