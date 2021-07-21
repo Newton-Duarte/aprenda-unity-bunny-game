@@ -40,8 +40,12 @@ public class OptionsController : MonoBehaviour
         }
     }
 
-    private void toggleOptions()
+    void toggleOptions()
     {
+        if (optionsPanel.activeInHierarchy){ musicSource.Play(); }
+        else { musicSource.Pause(); }
+
+        Time.timeScale = optionsPanel.activeInHierarchy ? 1 : 0;
         optionsPanel.SetActive(!optionsPanel.activeInHierarchy);
     }
 
